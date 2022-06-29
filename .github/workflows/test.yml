@@ -1,0 +1,23 @@
+name: Test bug
+
+on:
+  workflow_dispatch:
+    inputs:
+      hello:
+        default: world
+        description: "Hello world"
+        type: string
+      choice:
+        default: 1
+        description: "Choice"
+        type: string
+        options:
+          - 1
+          - 2
+          - 3
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+     - run: echo "Hello ${{ inputs.hello }} ${{ inputs.choice }}"
