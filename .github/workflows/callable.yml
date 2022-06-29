@@ -1,0 +1,17 @@
+name: Callable
+
+on:
+  workflow_call:
+    inputs:
+      hello:
+        description: "Hello world"
+        type: string
+      choice:
+        description: "Choice"
+        type: string
+        
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+     - run: echo "Hello ${{ inputs.hello }} ${{ inputs.choice }}"
